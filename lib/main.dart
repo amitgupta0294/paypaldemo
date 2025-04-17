@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/EditProfilePage.dart';
+import 'package:untitled/checkbalance.dart';
 import 'upi.dart';
 
 void main() {
@@ -71,7 +73,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             ],
                           ),),
           
-                          IconButton(onPressed: () {}, icon: Icon(Icons.edit), color: Colors.white,)
+                          IconButton(onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
+                          }, icon: Icon(Icons.edit), color: Colors.white,)
                         ],
                       )
                     ],
@@ -135,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     GestureDetector(
                       onTap:() {
-                        print("--=Check Balance");
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => BalanceCheckPage()));
                       },
                       child: Card(
                         color: Colors.deepPurple.shade100,
