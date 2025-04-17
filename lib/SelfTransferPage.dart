@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class BalanceCheckPage extends StatelessWidget {
+class SelfTransferPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: Text('Check Balance', style: TextStyle(color: Colors.white),),
+        title: Text('Self Transfer', style: TextStyle(color: Colors.white),),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
@@ -18,13 +18,37 @@ class BalanceCheckPage extends StatelessWidget {
         child: Column(
           children: [
             Icon(
-              Icons.account_balance_wallet,
+              Icons.swap_horiz,
               size: 100,
               color: Colors.deepPurple.shade100,
             ),
             SizedBox(height: 20),
-            Text("Check Balance for Account 12** **** **** **26",
-              style: TextStyle(fontSize: 15),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'From Account',
+                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'To Account',
+                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Colors.white,
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Amount to Transfer',
+                border: OutlineInputBorder(),
+                filled: true,
+                fillColor: Colors.white,
+              ),
+              keyboardType: TextInputType.number,
             ),
             SizedBox(height: 20),
             Container(
@@ -41,7 +65,7 @@ class BalanceCheckPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8), // Optional: rounded corners
                   ),
                 ),
-                child: const Text('Proceed'),
+                child: const Text('Transfer'),
               ),
             )
           ],

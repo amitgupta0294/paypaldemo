@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/EditProfilePage.dart';
+import 'package:untitled/GiftsRewardsPage.dart';
+import 'package:untitled/InsurancePurchasePage.dart';
+import 'package:untitled/SelfTransferPage.dart';
 import 'package:untitled/StocksListPage.dart';
 import 'package:untitled/checkbalance.dart';
 import 'package:untitled/utilitybill.dart';
@@ -85,17 +88,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
           
-              Card(
-                color: Colors.green,
-                child: Container(
-                  padding: EdgeInsets.all(20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.card_giftcard, color: Colors.white,),
-                      Text("  View Gifts and Rewards",
-                        style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold),)
-                    ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => GiftsRewardsPage()));
+                },
+                child: Card(
+                  color: Colors.green,
+                  child: Container(
+                    padding: EdgeInsets.all(20.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.card_giftcard, color: Colors.white,),
+                        Text("  View Gifts and Rewards",
+                          style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold),)
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -127,7 +135,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     GestureDetector(
-                      onTap:() {},
+                      onTap:() {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SelfTransferPage()));
+                      },
                       child: Card(
                         color: Colors.deepPurple.shade100,
                         child: Container(
@@ -207,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     GestureDetector(
                       onTap: () {
-
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => InsurancePurchasePage()));
                       },
                       child: Card(
                         color: Colors.deepPurple.shade100,
