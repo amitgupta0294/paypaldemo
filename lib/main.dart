@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/EditProfilePage.dart';
+import 'package:untitled/StocksListPage.dart';
 import 'package:untitled/checkbalance.dart';
+import 'package:untitled/utilitybill.dart';
 import 'upi.dart';
 
 void main() {
@@ -174,7 +176,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
 
                     GestureDetector(
-                      onTap:() {},
+                      onTap:() {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => UtilityBill()));
+                      },
                       child: Card(
                         color: Colors.deepPurple.shade100,
                         child: Container(
@@ -187,7 +191,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
 
                     GestureDetector(
-                      onTap:() {},
+                      onTap:() {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => StocksListPage()));
+                      },
                       child: Card(
                         color: Colors.deepPurple.shade100,
                         child: Container(

@@ -12,8 +12,16 @@ class _UpiState extends State<Upi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('UPI Pay', style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.deepPurple, centerTitle: true,),
+      appBar: AppBar(
+        title: Text('UPI Pay', style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.deepPurple, centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+          color: Colors.white,
+        ),
+      ),
+
 
       body: Container(
         padding: EdgeInsets.only(top: 20.0,left: 10, right: 10, bottom: 10),

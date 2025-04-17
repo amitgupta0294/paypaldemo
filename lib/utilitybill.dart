@@ -1,32 +1,33 @@
 import 'package:flutter/material.dart';
 
-class BalanceCheckPage extends StatelessWidget {
+class UtilityBill extends StatelessWidget {
+  const UtilityBill({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: Text('Check Balance', style: TextStyle(color: Colors.white),),
+        title: Text('Utility Bills', style: TextStyle(color: Colors.white),),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
           color: Colors.white,
         ),
       ),
+
       body: Container(
-        color: Colors.purple[50],
-        padding: EdgeInsets.all(16.0),
-        child: Column(
+        padding: EdgeInsets.all(10.0),
+        child: ListView(
           children: [
-            Icon(
-              Icons.account_balance_wallet,
-              size: 100,
-              color: Colors.deepPurple.shade100,
-            ),
+
+            Icon(Icons.electric_bolt, color: Colors.deepPurple.shade100, size: 100,),
             SizedBox(height: 20),
-            Text("Check Balance for Account 12** **** **** **26",
-              style: TextStyle(fontSize: 15),
+
+            Text("Your last month electricity bill is INR 1000. Press the button below to proceed.",
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
+
             SizedBox(height: 20),
             Container(
               padding: EdgeInsets.only(top: 20.0),
@@ -42,12 +43,12 @@ class BalanceCheckPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8), // Optional: rounded corners
                   ),
                 ),
-                child: const Text('Proceed'),
+                child: const Text('Proceed to Pay INR 1000'),
               ),
             )
           ],
         ),
-      ),
+      )
     );
   }
 }

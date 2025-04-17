@@ -10,10 +10,11 @@ class EditProfilePage extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
+          color: Colors.white,
         ),
       ),
       body: Container(
-        color: Colors.purple[50],
+        color: Colors.white,
         padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
