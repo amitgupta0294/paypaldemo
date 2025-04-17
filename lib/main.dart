@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'upi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -105,7 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
 
                     GestureDetector(
-                      onTap:() {},
+                      onTap:() {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Upi()));
+                      },
                       child: Card(
                         color: Colors.deepPurple.shade100,
                         child: Container(
